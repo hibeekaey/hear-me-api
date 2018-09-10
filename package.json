@@ -1,7 +1,7 @@
 {
-  "name": "nodejs-es6-express-seed",
+  "name": "deafhear-api",
   "version": "1.0.0",
-  "description": "NodeJS ES6 express seed",
+  "description": "API for DeafHear",
   "engines": {
     "node": "8.11.4"
   },
@@ -21,18 +21,20 @@
     "NodeJS",
     "ES6",
     "express",
-    "seed"
+    "seed",
+    "API",
+    "DeafHear"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hibeekaey/nodejs-es6-express-seed.git"
+    "url": "git+https://github.com/hibeekaey/hear-me-api.git"
   },
   "author": "Ibukun O. Dairo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hibeekaey/nodejs-es6-express-seed/issues"
+    "url": "https://github.com/hibeekaey/hear-me-api/issues"
   },
-  "homepage": "https://github.com/hibeekaey/nodejs-es6-express-seed#readme",
+  "homepage": "https://github.com/hibeekaey/hear-me-api#readme",
   "dependencies": {
     "aws-sdk": "^2.311.0",
     "body-parser": "^1.18.2",
