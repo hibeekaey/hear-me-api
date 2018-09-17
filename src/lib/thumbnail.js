@@ -14,7 +14,7 @@ import jimp from "jimp";
 import uuid from "uuid/v1"; // timestamp uuid
 import url from "url";
 
-// set up a thumbnail model and pass it using module.exports
+// set up a thumbnail model and export
 export default function (req, res, next) {
   if (req.body.public_url) {
     // open the file in the public url

@@ -12,7 +12,7 @@
 
 import jwt from "jsonwebtoken"; // used to create, sign, and verify tokens
 
-// set up a authentication model and pass it using module.exports
+// set up a authentication model and export
 export default function (req, res, next) {
   let token = req.body.token || req.query.token || req.headers["x-access-token"];
   
@@ -50,7 +50,7 @@ export default function (req, res, next) {
       token: token
     });
   }
-  else { // response if failed
+  else { next(); return; // response if token not found
     res.status(401).json({
       status: "error",
       message: "user authentication required"

@@ -20,7 +20,7 @@ const should = chai.should();
 
 chai.use(chaiHttp);
 
-describe("Danfonews API", () => {
+describe("DeafHear API", () => {
   let token;
   
   /**
