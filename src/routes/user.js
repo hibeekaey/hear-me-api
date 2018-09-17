@@ -16,5 +16,5 @@ import auth from "../lib/auth"; // import authentication module
 // use express router
 const router = express.Router();
  
-// set up a router and pass it using module.exports
+// set up a router and export
 export default router;

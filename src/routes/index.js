@@ -12,9 +12,13 @@
 
 import login from "./login";
 import user from "./user";
+import text from "./text";
+import speech from "./speech";
 
-// set up a route index model and pass it using module.exports
+// set up a route index model and export
 export function mount(app) {
   app.use("/login", login); // login route
   app.use("/user", user); // user route
+  app.use("/text", text); // text route
+  app.use("/speech", speech); // speech route
 }
