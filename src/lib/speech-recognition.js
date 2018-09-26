@@ -11,7 +11,6 @@
  */
 
 import speech from "@google-cloud/speech"; // google cloud client library
-import fs from "fs";
 import request from "request";
 
 // creates a client
@@ -33,16 +32,16 @@ export default function (req, res, next) {
             content: audioBytes,
           },
           config: {
-            encoding: 'LINEAR16',
+            encoding: "LINEAR16",
             sampleRateHertz: 16000,
-            languageCode: 'en-GB',
+            languageCode: "en-GB",
           },
         };
 
         // detects speech in the audio file
         client.recognize(request).then(data => {
           let response = data[0];
-          res.locals.transcription = response.results.map(result => result.alternatives[0].transcript).join('\n');
+          res.locals.transcription = response.results.map(result => result.alternatives[0].transcript).join("\n");
           
           next();
         }).catch(err => {

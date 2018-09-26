@@ -25,9 +25,9 @@ export default function (req, res, next) {
     let request = {
       input: { text: req.body.text },
       // set the language and SSML Voice Gender (optional)
-      voice: {languageCode: 'en-GB', ssmlGender: 'FEMALE'},
+      voice: {languageCode: "en-GB", ssmlGender: "FEMALE"},
       // set the type of audio encoding
-      audioConfig: {audioEncoding: 'MP3'}
+      audioConfig: {audioEncoding: "MP3"}
     };
 
     // performs the Text-to-Speech request
@@ -43,7 +43,7 @@ export default function (req, res, next) {
         let filepath = `${process.cwd()}/public/audios/${filename}`;
         
         // write the binary audio content to a local file
-        fs.writeFile(filepath, response.audioContent, 'binary', err => {
+        fs.writeFile(filepath, response.audioContent, "binary", err => {
           if (err) {
             res.status(400).json({
               status: "error",

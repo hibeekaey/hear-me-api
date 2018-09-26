@@ -55,7 +55,7 @@ app.use(morgan("dev", {
 }));
 
 // log all requests to access.log
-app.use(morgan("common", {stream: accessLogStream}));
+app.use(morgan("common", { stream: accessLogStream }));
 
 // use app routes
 mount(app);

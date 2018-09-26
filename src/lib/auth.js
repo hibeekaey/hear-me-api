@@ -23,15 +23,13 @@ export default function (req, res, next) {
           status: "error",
           message: "failed to authenticate token"
         });
-      }
-      else {
+      } else {
         // if everything is good, save to request for use in other routes
         req.decoded = decoded;
         next(); // proceed to the next middleware
       }
     });
-  }
-  else if (req.body.username && req.body.password) { // authenticate user
+  } else if (req.body.username && req.body.password) { // authenticate user
     // todo
 
     // create a token with only our given payload
@@ -49,11 +47,12 @@ export default function (req, res, next) {
       message: "user authentication completed",
       token: token
     });
-  }
-  else { next(); return; // response if token not found
-    res.status(401).json({
-      status: "error",
-      message: "user authentication required"
-    });
+  } else { // response if token not found
+    next();
+    return;
+    // res.status(401).json({
+    //   status: "error",
+    //   message: "user authentication required"
+    // });
   }
 }
