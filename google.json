@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "deafhear-215915",
+  "private_key_id": "02c18c0bcf807e6706ae8f47047e624503645099",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCpb/nETiYKfZfy\nwhDVyX8HUTAk8SYm6PJ7bqYlDFc8SYdPrUJ/Soynq25sbCMeFk7b6+4gmt771C09\nQdh5+n+7meixfbWvLtdpcSOcZde6/scoJjHflawtNycTTCXKDl7r68Ud71hdbLqd\na3QPc/nNXx1zJbyhOfdxcE54qbCo+EOMg6c71kHkD2oq/Eky0VBApm+dFSQ5rPK7\nQhJqtRFVpxUCjXbHvXjzf8jqJ49beb5jym+t9D6wnNuyW25f9aTMLvkSnIjoymxE\nOdntc9Yr1ylo51aMwuqc178cyYtQqLw0WTCXbfpDvQ0BWCEeEsKNSqLgIDSA9+i7\n0swfCaZXAgMBAAECggEADjPmLlfUpX14nq84xQriXIUoMXiLV6igJsuUHrflmhaZ\nwoqF7/CaULW0iF8aJHv/OT0SFWaV+WsELcXWtQbT7TBOCo68i4Y0JVEICKSazEBu\nBkYJWTINIC8m1d3Erya8Oy9kswkskYw7KlXnASKaFmZ6K/xGTwdyX+5njYK/3bHq\n27pmRmrSvnwtHbtix0ORTOXvHDl7zWO2zHa0TE8sbxMgCSK0rzp1apdUXcvycwxp\nCBw2yRDODvZvT0a6mIQB0LZNYsx/u8M7IGa1F8U12c9se94QUOAMpZW7P4o2ifPi\nKPlLmH5Fax6B3xdHLNbb9diFPh70vyKFUrf4Z+ZbAQKBgQDXoxnPWOuZb2Cdio26\nJbeyAz5ocPR8hS1pykvJ60qIc1NY7xU5OB5yUFOTa7R4rcrz+VQ8XeVev4zowHkP\nIAx6c2KBpwwsiNy4BDK9RDtM8qpNoXicXfBa1BV42+dwl/aCtkMxFyc8Z5ECQdCZ\nVd5SwbNYzi7KnxIAUYqpeBkRVwKBgQDJJxPFoKVm8cMotq77yVme9rnJysZRl9yE\ne41HrnvnxkVUeI7rhhum/Mwe4wWusIgtrI2ZSPKDN6mUCHXeY0abe5Scdn9BxuTg\n4yMqbrkZ6sHNqza0dDGUQGlSYVegkuIr2GBkfoj3ETruaRQWp1+HOc1XgfwXXze9\niBGzPH3zAQKBgQDOM1QB98jLHzsnSw+92kVvfzSVULYpwHwttlmEy2+pTYZ8+5qy\n7ZwHuhJBXXPlFmOFq31GgI9ObCNFio/4y6/DBEVFL8UvbOyLNtCCNhXyvfXmaCra\nc+XcJQQnXzlQbLA4TCuybK6DT5HVs7PSfM8tGbbzi64o6bWgAllzNrnZ3wKBgFV3\nuxjvhxfUhX2ZEYR+Kww1/P7Wn6kvg0zvSjo40wDJ589aYi+Ejd9H7lr5TwLIkzQE\n6y1EJ3bFgdIaPiq9t9R8j8pjNvL11W4QVHLFFPUEIFCI/Pdzn1VEgPu1zIu3nU3P\n5DUO5pdDxOxjzVtKxnYogy05V6l+lap8VDj57PIBAoGBALe2y6Z7oqOWs/1S1bca\n0J+XDGBFMq3nGfxblcJGT2Vk3ZIjrGyWSRHqpd6Qg2mnly6FCD+jD1Kz5zYoTtVv\nbMSeSPXEfjP8QzLm2nOGPUJDr5S8Rht7RriJUIQXqvokxIF5gexW/X461uxc0Sx1\nSPG/yqbcu+N945AvnNBK5rf5\n-----END PRIVATE KEY-----\n",
+  "client_email": "cuesoft@deafhear-215915.iam.gserviceaccount.com",
+  "client_id": "117242721293275559111",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cuesoft%40deafhear-215915.iam.gserviceaccount.com"
+}
