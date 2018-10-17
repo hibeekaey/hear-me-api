@@ -20,12 +20,12 @@ const client = new textToSpeech.TextToSpeechClient();
 
 // set up a text-to-speech model and export
 export default function (req, res, next) {
-  if (req.body.text) { // check if text is in request body
+  if (req.body.text && req.body.language) { // check if text is in request body
     // prepare request body
     let request = {
       input: { text: req.body.text },
       // set the language and SSML Voice Gender (optional)
-      voice: {languageCode: "en-GB", ssmlGender: "FEMALE"},
+      voice: {languageCode: req.body.language, ssmlGender: "FEMALE"},
       // set the type of audio encoding
       audioConfig: {audioEncoding: "MP3"}
     };

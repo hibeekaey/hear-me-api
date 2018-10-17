@@ -24,12 +24,7 @@ import { mount } from "./routes";
 dotenv.config();
 
 // initialize app
-let app = express();
-
-// for testing
-app.get("/", (req, res) => {
-  res.send("Hooray!");
-});
+const app = express();
 
 // public directory
 app.use(express.static(`${process.cwd()}/public`));
@@ -40,7 +35,7 @@ let logDirectory = `${process.cwd()}/logs`; // log directory
 fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 
 // create a rotating write stream
-var accessLogStream = rfs("access.log", {
+const accessLogStream = rfs("access.log", {
   interval: "1d", // rotate daily
   path: logDirectory
 });
@@ -56,6 +51,26 @@ app.use(morgan("dev", {
 
 // log all requests to access.log
 app.use(morgan("common", { stream: accessLogStream }));
+
+// enable CORS
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
+  res.header("Access-Control-Max-Age", "3600");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Range");
+  res.header("Access-Control-Expose-Headers", "Accept-Ranges, Content-Encoding, Content-Length, Content-Range");
+  res.header("Access-Control-Allow-Credentials", "true");
+  next();
+});
+
+app.options("*", (req, res) => {
+  res.send(201);
+});
+
+// for testing
+app.get("/", (req, res) => {
+  res.send("Hooray!");
+});
 
 // use app routes
 mount(app);
