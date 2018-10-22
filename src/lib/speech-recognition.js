@@ -25,8 +25,7 @@ export default function (req, res, next) {
         content: req.body.voice,
       },
       config: {
-        encoding: "LINEAR16",
-        sampleRateHertz: 16000,
+        encoding: "FLAC",
         languageCode: req.body.language,
       },
     };
