@@ -15,42 +15,33 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (req, res, next) {
-  if (req.body.voice) {
+  if (req.body.voice && req.body.language) {
     // check if voice is in request body
-    _request3.default.get({ url: req.body.voice, encoding: "base64" }, function (err, resp, audioBytes) {
-      if (err) {
-        res.status(400).json({
-          status: "error",
-          message: "audio file read operation failed"
-        });
-      } else {
-        // the audio file's encoding, sample rate in hertz, and BCP-47 language code
-        var _request = {
-          audio: {
-            content: audioBytes
-          },
-          config: {
-            encoding: "LINEAR16",
-            sampleRateHertz: 16000,
-            languageCode: "en-GB"
-          }
-        };
-
-        // detects speech in the audio file
-        client.recognize(_request).then(function (data) {
-          var response = data[0];
-          res.locals.transcription = response.results.map(function (result) {
-            return result.alternatives[0].transcript;
-          }).join("\n");
-
-          next();
-        }).catch(function (err) {
-          res.status(400).json({
-            status: "error",
-            message: "speech recognition operation failed"
-          });
-        });
+    // the audio file's encoding, sample rate in hertz, and BCP-47 language code
+    var _request = {
+      audio: {
+        content: req.body.voice
+      },
+      config: {
+        encoding: "LINEAR16",
+        sampleRateHertz: 16000,
+        languageCode: req.body.language
       }
+    };
+
+    // detects speech in the audio file
+    client.recognize(_request).then(function (data) {
+      var response = data[0];
+      res.locals.transcription = response.results.map(function (result) {
+        return result.alternatives[0].transcript;
+      }).join("\n");
+
+      next();
+    }).catch(function (err) {
+      res.status(400).json({
+        status: "error",
+        message: "speech recognition operation failed"
+      });
     });
   } else {
     res.status(400).json({
