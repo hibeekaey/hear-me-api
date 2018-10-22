@@ -11,7 +11,6 @@
  */
 
 import speech from "@google-cloud/speech"; // google cloud client library
-import request from "request";
 
 // creates a client
 const client = new speech.SpeechClient();
@@ -25,7 +24,8 @@ export default function (req, res, next) {
         content: req.body.voice,
       },
       config: {
-        encoding: "FLAC",
+        encoding: "LINEAR16",
+        sampleRateHertz: 16000,
         languageCode: req.body.language,
       },
     };
