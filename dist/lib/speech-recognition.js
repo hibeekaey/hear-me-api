@@ -19,11 +19,11 @@ exports.default = function (req, res, next) {
     // check if voice is in request body
     // the audio file's encoding, sample rate in hertz, and BCP-47 language code
     // todo convert the received m4a file to wav
-    var audioWav = req.body.voice.toWav();
+    //const audioWav = req.body.voice.toWav();
 
     var request = {
       audio: {
-        content: audioWav
+        content: req.body.voice
       },
       config: {
         languageCode: req.body.language
