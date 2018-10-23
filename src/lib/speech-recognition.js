@@ -20,14 +20,13 @@ const client = new speech.SpeechClient();
 export default function (req, res, next) {
   if (req.body.voice && req.body.language) { // check if voice is in request body
     // the audio file's encoding, sample rate in hertz, and BCP-47 language code
-    // todo convert the received m4a file to wav
-    //const audioWav = req.body.voice.toWav();
-
     let request = {
       audio: {
         content: req.body.voice,
       },
       config: {
+        encoding: "AMR_WB",
+        sampleRateHertz: 16000,
         languageCode: req.body.language,
       },
     };
