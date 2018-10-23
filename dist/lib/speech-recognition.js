@@ -18,13 +18,14 @@ exports.default = function (req, res, next) {
   if (req.body.voice && req.body.language) {
     // check if voice is in request body
     // the audio file's encoding, sample rate in hertz, and BCP-47 language code
+    // todo convert the received m4a file to wav
+    var audioWav = req.body.voice.toWav();
+
     var request = {
       audio: {
-        content: req.body.voice
+        content: audioWav
       },
       config: {
-        encoding: "LINEAR16",
-        sampleRateHertz: 16000,
         languageCode: req.body.language
       }
     };
@@ -55,11 +56,14 @@ var _speech = require("@google-cloud/speech");
 
 var _speech2 = _interopRequireDefault(_speech);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _fs = require("fs");
 
-// google cloud client library
+var _fs2 = _interopRequireDefault(_fs);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // creates a client
 var client = new _speech2.default.SpeechClient();
 
 // set up a speech recognition model and export
+// google cloud client library
