@@ -38,7 +38,7 @@
   "dependencies": {
     "@google-cloud/speech": "^2.1.0",
     "@google-cloud/text-to-speech": "^0.3.0",
-    "aws-sdk": "^2.311.0",
+    "aws-sdk": "^2.814.0",
     "body-parser": "^1.18.2",
     "crypto": "^1.0.1",
     "dotenv": "^5.0.1",
